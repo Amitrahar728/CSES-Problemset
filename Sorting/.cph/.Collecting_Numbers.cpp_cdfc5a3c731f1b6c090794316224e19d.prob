@@ -1,0 +1,1 @@
+{"name":"Collecting Numbers","url":"https://cses.fi/problemset/task/2216","interactive":false,"memoryLimit":512,"timeLimit":1000,"group":"CSES - CSES Problem Set","tests":[{"id":1759374899357,"input":"5\n4 2 1 5 3\n","output":"3\n"}],"srcPath":"c:\\Users\\hp\\Desktop\\CP practise\\CSES Problemset\\Sorting\\Collecting_Numbers.cpp"}
