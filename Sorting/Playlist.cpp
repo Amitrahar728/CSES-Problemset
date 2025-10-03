@@ -54,25 +54,22 @@ double eps = 1e-12;
 
 int main(){
     ll n ;cin>>n;
-    vector<ll> arr;
+    vector<ll> songs;
     for(ll i =0; i<n; i++){
         ll x; cin>>x;
-        arr.push_back(x);
+        songs.push_back(x);
     }
-    ll maxi = 1;
-    for(ll i =0; i<n; i++){
-        vector<ll> st;
-        ll j =i;
-        ll cnt =0;
-        while(j<n){
-            if(find(all(st), arr[j])!= st.end()){
-                break;
-            }
-            cnt++;
-            st.push_back(arr[j]);
-            j++;
+    ll start = 0, ans = 0;
+    map<ll, ll> mp;
+    for (ll end = 0; end <n; end++) {
+        if (mp.find(songs[end]) == mp.end())
+            mp.insert({ songs[end], end });
+        else {
+            if (mp[songs[end]] >= start)
+                start = mp[songs[end]] + 1;
+            mp[songs[end]] = end;
         }
-        maxi = max(cnt, maxi);
+        ans = max(ans, end - start + 1);
     }
-    return 0;
+    cout<< ans<<endl;
 }
