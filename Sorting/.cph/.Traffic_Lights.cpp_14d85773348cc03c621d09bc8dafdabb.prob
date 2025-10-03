@@ -1,0 +1,1 @@
+{"name":"Traffic Lights","url":"https://cses.fi/problemset/task/1163","interactive":false,"memoryLimit":512,"timeLimit":1000,"group":"CSES - CSES Problem Set","tests":[{"id":1759469161753,"input":"8 3\n3 6 2\n","output":"5 3 3\n"}],"srcPath":"c:\\Users\\hp\\Desktop\\CP practise\\CSES Problemset\\Sorting\\Traffic_Lights.cpp"}

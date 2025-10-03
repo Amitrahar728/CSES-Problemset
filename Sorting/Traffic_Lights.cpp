@@ -53,26 +53,40 @@ double eps = 1e-12;
 #define vec(arr)
 
 int main(){
-    ll n ; cin>>n;
-    vector<ll> cubes(n);
-    for(ll i =0; i<n; i++){
-        cin>>cubes[i];
+    ll X, N;
+    cin>>X>>N;
+    vector<ll> P(N);
+    for(ll i =0; i<N; i++){
+        cin>>P[i];
     }
-    ll ans = 0;
+    set<pair<int, int> > ranges;
+    ranges.insert({ 0, X });
 
-    multiset<ll> topElements;
-    for (int i = 0; i <n; i++){
-        auto it = topElements.upper_bound(cubes[i]);
-        if (it == topElements.end()) {
-            ans++;
-            topElements.insert(cubes[i]);
-        }
-        else {
-            topElements.erase(it);
-            topElements.insert(cubes[i]);
-        }
+
+    multiset<ll> range_lengths;
+    range_lengths.insert(X);
+
+    for (int i = 0; i < N; i++) {
+        ll pos = P[i];
+
+        auto it = ranges.upper_bound({ pos, 0 });
+        it--;
+
+        ll start = it->first;
+        ll end = it->second;
+
+        
+        ranges.erase(it);
+
+        range_lengths.erase(
+            range_lengths.find(end - start));
+
+        
+        ranges.insert({ start, pos });
+        ranges.insert({ pos, end });
+        range_lengths.insert(pos - start);
+        range_lengths.insert(end - pos);
+        cout << *range_lengths.rbegin() << " ";
     }
-    cout<<ans<<endl;
-
-
+    
 }
