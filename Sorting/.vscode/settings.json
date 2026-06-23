@@ -4,5 +4,6 @@
         "cmath": "cpp",
         "complex": "cpp",
         "cstdlib": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }
