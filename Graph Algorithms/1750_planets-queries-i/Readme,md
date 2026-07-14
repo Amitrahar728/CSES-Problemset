@@ -1,0 +1,24 @@
+This will surely blow up your mind as it did in my case 
+
+Binary Lifting is the new algo i learnt for this specific problem  what if the questions talks related to next n steps where will i reach so the solution tells us something 
+
+Do check some video for better understanding for my end :
+
+think that in 0 steps we will be only at current position  in 1 we are provided with the position 
+for 2 steps 1 from current and then the 1st steps of next reached node
+ in code language :
+
+this is intialization 
+
+for(int i = 1; i <= n; i++)
+    cin >> up[i][0];
+
+for(int j = 1; j < 30; j++)
+{
+    for(int i = 1; i <= n; i++)
+    {
+        up[i][j] = up[ up[i][j-1] ][j-1];
+    }
+}
+
+so this was precomputation and then return according to the queries .
